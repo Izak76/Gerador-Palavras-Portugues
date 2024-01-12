@@ -52,9 +52,9 @@ if __name__ == "__main__":
         gerar_palavras(arquivo)
     
     print("Ordenando as palavras geradas")
-    palavras.sort()
+    palavras.sort(key=str.lower)
 
-    with open("pt_BR.txt", "w", encoding="utf-8", newline=None) as arquivo:
+    with open("pt_BR.txt", "w", encoding="utf-8") as arquivo:
         print("Escrevendo arquivo")
         for palavra in palavras:
             arquivo.write("".join((palavra, "\n")))
